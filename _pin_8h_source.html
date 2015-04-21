@@ -8,6 +8,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,6 +75,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_pin_8h_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -192,11 +214,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_pin_html_a2e59b530eab7ceb7fa949909ee1035d6"><div class="ttname"><a href="class_pin.html#a2e59b530eab7ceb7fa949909ee1035d6">Pin::getMode</a></div><div class="ttdeci">uint8_t getMode()</div><div class="ttdoc">Get the mode of the pin from the DDR register. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_8cpp_source.html#l00130">Pin.cpp:130</a></div></div>
 <div class="ttc" id="class_pin_html_aad8e5f25be6806006d7d92067cf355dc"><div class="ttname"><a href="class_pin.html#aad8e5f25be6806006d7d92067cf355dc">Pin::setState</a></div><div class="ttdeci">bool setState(uint8_t state)</div><div class="ttdoc">Set the pin state. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_8cpp_source.html#l00207">Pin.cpp:207</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 21 2015 14:46:53 for Pin Library by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="_pin_8h.html">Pin.h</a></li>
+    <li class="footer">
+      Written by Alec Fenichel
+    </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,11 +1,11 @@
 var indexSectionsWithContent =
 {
-  0: "dgmoprst",
+  0: "adglmoprstu",
   1: "p",
-  2: "mpr",
+  2: "lmpru",
   3: "gpst",
   4: "dop",
-  5: "dpr",
+  5: "adpr",
   6: "dp"
 };
 

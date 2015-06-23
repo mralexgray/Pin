@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "Pin Library", "index.html", [
+  [ "Arduino Pin Library", "index.html", [
     [ "Data Structures", null, [
       [ "Data Structures", "annotated.html", "annotated" ],
       [ "Data Structure Index", "classes.html", null ],

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>Pin Library: Documentation</title>
+<title>Pin Library: Pin</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -46,8 +46,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('index.html','');});
+$(document).ready(function(){initNavTree('md__r_e_a_d_m_e.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -99,12 +99,22 @@ $(document).ready(function(){initNavTree('index.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Documentation </div>  </div>
+<div class="title"><a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Arduino <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> library </p><dl class="section author"><dt>Author</dt><dd>Alec Fenichel </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2014</dd></dl>
-<p>Arduino library for fast access to Arduino I/O pins using port manipulation </p>
+<div class="textblock"><p>An easy to use Arduino library for fast I/O using port manipulation. Supports Arduino Mega, Arduino Uno, and Arduino Leonardo. Complete documentation can be found <a href="https://fenichelar.github.io/Pin/index.html">here</a>. Common uses are listed below.</p>
+<h2>Import <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> Library</h2>
+<p>```C #include &lt;<a class="el" href="_pin_8h.html" title="Arduino Pin library. ">Pin.h</a>&gt; ```</p>
+<h2>Create <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> Object</h2>
+<p>Single <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> ```C <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> myPin = <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin(5)</a>; ``` Array of Pins ```C <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> myPins[] = {6,7}; ```</p>
+<h2>Use as Input</h2>
+<p>Set Mode to Input ```C myPin.setInput(); ``` Enable/Disable Pullup Resistor ```C myPin.setPullupOn(); <code> </code>C myPin.setPullupOff(); ```</p>
+<h2>Use as Output</h2>
+<p>Set Mode to Output ```C myPin.setOutput(); ``` Set HIGH/LOW ```C myPin.setHigh(); <code> </code>C myPin.setLow(); ```</p>
+<h2>Get <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> Info</h2>
+<p>Get Mode (INPUT/OUTPUT) ```C myPin.getMode(); ``` Get State (HIGH/LOW) ```C myPin.getState(); ``` Get Value (HIGH/LOW) ```C myPin.getValue(); ```</p>
+<h2>Toggle</h2>
+<p>Toggle Mode (OUTPUT -&gt; INPUT, INPUT -&gt; OUTPUT) ```C myPin.toggleMode(); ``` Toggle State (HIGH -&gt; LOW, LOW -&gt; HIGH) ```C myPin.toggleState(); ``` </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

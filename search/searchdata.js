@@ -2,11 +2,10 @@ var indexSectionsWithContent =
 {
   0: "adglmoprstu",
   1: "p",
-  2: "lmpru",
+  2: "lmpu",
   3: "gpst",
   4: "dop",
-  5: "adpr",
-  6: "dp"
+  5: "adpr"
 };
 
 var indexSectionNames =
@@ -16,18 +15,16 @@ var indexSectionNames =
   2: "files",
   3: "functions",
   4: "variables",
-  5: "defines",
-  6: "pages"
+  5: "defines"
 };
 
 var indexSectionLabels =
 {
   0: "All",
-  1: "Classes",
+  1: "Data Structures",
   2: "Files",
   3: "Functions",
   4: "Variables",
-  5: "Macros",
-  6: "Pages"
+  5: "Macros"
 };
 

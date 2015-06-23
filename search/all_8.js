@@ -12,5 +12,6 @@ var searchData=
   ['setoutputlow',['setOutputLow',['../class_pin.html#a01c18439f6429423aff760d3a3e15539',1,'Pin']]],
   ['setpullupoff',['setPullupOff',['../class_pin.html#ab0170aaba5a46285ad969d3002460624',1,'Pin']]],
   ['setpullupon',['setPullupOn',['../class_pin.html#a89ae41cb3e11695dd5f890cf78c139b3',1,'Pin']]],
-  ['setstate',['setState',['../class_pin.html#aad8e5f25be6806006d7d92067cf355dc',1,'Pin']]]
+  ['setstate',['setState',['../class_pin.html#aad8e5f25be6806006d7d92067cf355dc',1,'Pin']]],
+  ['setup',['setup',['../_pin-_analog_8ino.html#a4fc01d736fe50cf5b977f755b675f11d',1,'setup():&#160;Pin-Analog.ino'],['../_pin-_array_8ino.html#a4fc01d736fe50cf5b977f755b675f11d',1,'setup():&#160;Pin-Array.ino'],['../_pin-_toggle_8ino.html#a4fc01d736fe50cf5b977f755b675f11d',1,'setup():&#160;Pin-Toggle.ino']]]
 ];

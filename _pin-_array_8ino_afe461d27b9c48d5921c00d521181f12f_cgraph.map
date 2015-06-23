@@ -1,0 +1,4 @@
+<map id="loop" name="loop">
+<area shape="rect" id="node2" href="$class_pin.html#a01c18439f6429423aff760d3a3e15539" title="Set the pin mode to output and the pin output to LOW. " alt="" coords="100,5,230,31"/>
+<area shape="rect" id="node3" href="$class_pin.html#a3b1c3fa3480cd4a57c065f2e8811543a" title="Set the pin mode to input. " alt="" coords="117,55,213,80"/>
+</map>

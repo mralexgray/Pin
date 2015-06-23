@@ -1,0 +1,4 @@
+<map id="setup" name="setup">
+<area shape="rect" id="node2" href="$class_pin.html#a2309200ff683097b1aa8679ae3dc1e30" title="Set the pin mode to output. " alt="" coords="107,5,213,31"/>
+<area shape="rect" id="node3" href="$class_pin.html#a3b1c3fa3480cd4a57c065f2e8811543a" title="Set the pin mode to input. " alt="" coords="112,55,208,80"/>
+</map>

@@ -1,6 +1,9 @@
 var searchData=
 [
   ['pin',['Pin',['../class_pin.html',1,'Pin'],['../class_pin.html#a541694f83e004d36bbeb528644899254',1,'Pin::Pin(uint8_t number)'],['../class_pin.html#adb8f3e2faf5e134ea1e7a89e1c6e4998',1,'Pin::Pin(uint8_t number, bool analog)'],['../structpin_mapping.html#a432b541c02e3df05140af01c680ad6bb',1,'pinMapping::pin()']]],
+  ['pin_2danalog_2eino',['Pin-Analog.ino',['../_pin-_analog_8ino.html',1,'']]],
+  ['pin_2darray_2eino',['Pin-Array.ino',['../_pin-_array_8ino.html',1,'']]],
+  ['pin_2dtoggle_2eino',['Pin-Toggle.ino',['../_pin-_toggle_8ino.html',1,'']]],
   ['pin_2ecpp',['Pin.cpp',['../_pin_8cpp.html',1,'']]],
   ['pin_2eh',['Pin.h',['../_pin_8h.html',1,'']]],
   ['pin_5fon',['PIN_ON',['../_pin_8h.html#a210826ccdd84a2ac0bfd0b5494baa19b',1,'Pin.h']]],

@@ -3,8 +3,8 @@ var indexSectionsWithContent =
   0: "adglmoprstu",
   1: "p",
   2: "lmpu",
-  3: "gpst",
-  4: "dop",
+  3: "glpst",
+  4: "dmop",
   5: "adpr"
 };
 

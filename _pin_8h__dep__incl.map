@@ -1,3 +1,6 @@
 <map id="src/Pin.h" name="src/Pin.h">
-<area shape="rect" id="node2" href="$_pin_8cpp.html" title="Arduino Pin library. " alt="" coords="5,79,93,104"/>
+<area shape="rect" id="node2" href="$_pin_8cpp.html" title="Arduino Pin library. " alt="" coords="5,85,93,111"/>
+<area shape="rect" id="node3" href="$_pin-_analog_8ino.html" title="Pin analog example. " alt="" coords="117,79,264,117"/>
+<area shape="rect" id="node4" href="$_pin-_array_8ino.html" title="Pin array example. " alt="" coords="288,79,426,117"/>
+<area shape="rect" id="node5" href="$_pin-_toggle_8ino.html" title="Pin toggling example. " alt="" coords="450,79,595,117"/>
 </map>

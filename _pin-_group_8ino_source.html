@@ -113,29 +113,39 @@ $(document).ready(function(){initNavTree('_pin-_group_8ino_source.html','');});
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// The Pins used in this array must all be on the same DDR and PORT registers</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// Look at the coresponding file in the boards directory to determine what register each pin is on</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="_pin-_group_8ino.html#a11c14eadbd4fb9ff28f643f222665807">   13</a></span>&#160;<a class="code" href="class_pin.html">Pin</a> <a class="code" href="_pin-_group_8ino.html#a11c14eadbd4fb9ff28f643f222665807">myPinsGroup</a>[] = {0,1,2};  <span class="comment">// Create array of Pin objects for digital pins labelled 0-2 on any of the supported boards</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="_pin-_group_8ino.html#abc12d449a0f3e6c5092af4c91ea7feb8">   13</a></span>&#160;<a class="code" href="class_pin.html">Pin</a> <a class="code" href="_pin-_group_8ino.html#abc12d449a0f3e6c5092af4c91ea7feb8">myPinGroup</a>[] = {0,1,2};  <span class="comment">// Create array of Pin objects for digital pins labelled 0-2 on any of the supported boards</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="_pin-_group_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">   18</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin-_group_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a>() {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="_pin-_group_8ino.html#afe461d27b9c48d5921c00d521181f12f">   24</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin-_group_8ino.html#afe461d27b9c48d5921c00d521181f12f">loop</a>() {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="_pin_group_8h.html#aaed3774ad982f219e0d0f52941f93036">setOutputLow</a>(myPinsGroup);  <span class="comment">// Simultaneously set array of Pins to output low</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  delay(2);  <span class="comment">// Wait 2 milliseconds</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="_pin_group_8h.html#adac2aecba669d1fecc4ffbcdfef9d7ee">setInput</a>(myPinsGroup);  <span class="comment">// Simultaneously set array of Pins to input mode</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  delay(2);  <span class="comment">// Wait 2 milliseconds</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  Serial.begin(9600);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="comment">// Check to ensure all pins in array use the same registers.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="_pin_group_8h.html#a12eff577b2216c61d6819a85116002d7">checkPinGroup</a>(myPinGroup)) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    Serial.println(<span class="stringliteral">&quot;All Pins in array use the same registers.&quot;</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    Serial.println(<span class="stringliteral">&quot;Pins in array do not use the same registers!&quot;</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">while</span>(1) {}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="_pin-_group_8ino.html#afe461d27b9c48d5921c00d521181f12f">   33</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin-_group_8ino.html#afe461d27b9c48d5921c00d521181f12f">loop</a>() {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="_pin_group_8h.html#aaed3774ad982f219e0d0f52941f93036">setOutputLow</a>(myPinGroup);  <span class="comment">// Simultaneously set array of Pins to output low</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  delay(2);  <span class="comment">// Wait 2 milliseconds</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="_pin_group_8h.html#adac2aecba669d1fecc4ffbcdfef9d7ee">setInput</a>(myPinGroup);  <span class="comment">// Simultaneously set array of Pins to input mode</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  delay(2);  <span class="comment">// Wait 2 milliseconds</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
 <div class="ttc" id="class_pin_html"><div class="ttname"><a href="class_pin.html">Pin</a></div><div class="ttdoc">Class for fast access to Arduino I/O pins using port manipulation. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_8h_source.html#l00047">Pin.h:47</a></div></div>
 <div class="ttc" id="_pin_group_8h_html"><div class="ttname"><a href="_pin_group_8h.html">PinGroup.h</a></div><div class="ttdoc">Arduino Pin library group functions. </div></div>
 <div class="ttc" id="_pin_group_8h_html_adac2aecba669d1fecc4ffbcdfef9d7ee"><div class="ttname"><a href="_pin_group_8h.html#adac2aecba669d1fecc4ffbcdfef9d7ee">setInput</a></div><div class="ttdeci">void setInput(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin mode of multiple pins to input. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00037">PinGroup.h:37</a></div></div>
+<div class="ttc" id="_pin_group_8h_html_a12eff577b2216c61d6819a85116002d7"><div class="ttname"><a href="_pin_group_8h.html#a12eff577b2216c61d6819a85116002d7">checkPinGroup</a></div><div class="ttdeci">bool checkPinGroup(Pin(&amp;pins)[N])</div><div class="ttdoc">Check the array to ensure all pins use the same registers. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00165">PinGroup.h:165</a></div></div>
 <div class="ttc" id="_pin_group_8h_html_aaed3774ad982f219e0d0f52941f93036"><div class="ttname"><a href="_pin_group_8h.html#aaed3774ad982f219e0d0f52941f93036">setOutputLow</a></div><div class="ttdeci">void setOutputLow(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin mode of multiple pins to output and the pin output to LOW. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00150">PinGroup.h:150</a></div></div>
 <div class="ttc" id="_pin_8h_html"><div class="ttname"><a href="_pin_8h.html">Pin.h</a></div><div class="ttdoc">Arduino Pin library. </div></div>
 <div class="ttc" id="_pin-_group_8ino_html_a4fc01d736fe50cf5b977f755b675f11d"><div class="ttname"><a href="_pin-_group_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a></div><div class="ttdeci">void setup()</div><div class="ttdoc">Called at start. </div><div class="ttdef"><b>Definition:</b> <a href="_pin-_group_8ino_source.html#l00018">Pin-Group.ino:18</a></div></div>
-<div class="ttc" id="_pin-_group_8ino_html_afe461d27b9c48d5921c00d521181f12f"><div class="ttname"><a href="_pin-_group_8ino.html#afe461d27b9c48d5921c00d521181f12f">loop</a></div><div class="ttdeci">void loop()</div><div class="ttdoc">Called continously after setup. </div><div class="ttdef"><b>Definition:</b> <a href="_pin-_group_8ino_source.html#l00024">Pin-Group.ino:24</a></div></div>
-<div class="ttc" id="_pin-_group_8ino_html_a11c14eadbd4fb9ff28f643f222665807"><div class="ttname"><a href="_pin-_group_8ino.html#a11c14eadbd4fb9ff28f643f222665807">myPinsGroup</a></div><div class="ttdeci">Pin myPinsGroup[]</div><div class="ttdef"><b>Definition:</b> <a href="_pin-_group_8ino_source.html#l00013">Pin-Group.ino:13</a></div></div>
+<div class="ttc" id="_pin-_group_8ino_html_abc12d449a0f3e6c5092af4c91ea7feb8"><div class="ttname"><a href="_pin-_group_8ino.html#abc12d449a0f3e6c5092af4c91ea7feb8">myPinGroup</a></div><div class="ttdeci">Pin myPinGroup[]</div><div class="ttdef"><b>Definition:</b> <a href="_pin-_group_8ino_source.html#l00013">Pin-Group.ino:13</a></div></div>
+<div class="ttc" id="_pin-_group_8ino_html_afe461d27b9c48d5921c00d521181f12f"><div class="ttname"><a href="_pin-_group_8ino.html#afe461d27b9c48d5921c00d521181f12f">loop</a></div><div class="ttdeci">void loop()</div><div class="ttdoc">Called continously after setup. </div><div class="ttdef"><b>Definition:</b> <a href="_pin-_group_8ino_source.html#l00033">Pin-Group.ino:33</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

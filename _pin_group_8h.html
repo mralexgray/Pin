@@ -191,6 +191,10 @@ Functions</h2></td></tr>
 <tr class="memitem:aaed3774ad982f219e0d0f52941f93036"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="_pin_group_8h.html#aaed3774ad982f219e0d0f52941f93036">setOutputLow</a> (<a class="el" href="class_pin.html">Pin</a>(&amp;pins)[N])</td></tr>
 <tr class="memdesc:aaed3774ad982f219e0d0f52941f93036"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the pin mode of multiple pins to output and the pin output to LOW.  <a href="#aaed3774ad982f219e0d0f52941f93036">More...</a><br /></td></tr>
 <tr class="separator:aaed3774ad982f219e0d0f52941f93036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12eff577b2216c61d6819a85116002d7"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:a12eff577b2216c61d6819a85116002d7"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="_pin_group_8h.html#a12eff577b2216c61d6819a85116002d7">checkPinGroup</a> (<a class="el" href="class_pin.html">Pin</a>(&amp;pins)[N])</td></tr>
+<tr class="memdesc:a12eff577b2216c61d6819a85116002d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check the array to ensure all pins use the same registers.  <a href="#a12eff577b2216c61d6819a85116002d7">More...</a><br /></td></tr>
+<tr class="separator:a12eff577b2216c61d6819a85116002d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Arduino <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> library group functions. </p>
@@ -294,6 +298,35 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a12eff577b2216c61d6819a85116002d7"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool checkPinGroup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_pin.html">Pin</a>(&amp;)&#160;</td>
+          <td class="paramname"><em>pins</em>[N]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check the array to ensure all pins use the same registers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pins</td><td>an array of pins</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the pins in the array all use the same registers, false otherwise </dd></dl>
+
+<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00165">165</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="aa52c08a401cfba437e502a2645902533"></a>
 <div class="memitem">
 <div class="memproto">

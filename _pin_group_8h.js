@@ -5,6 +5,7 @@ var _pin_group_8h =
     [ "MERGE_OFFSET", "_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148", null ],
     [ "PORTS_HIGH", "_pin_group_8h.html#ab5663727f35f7ba4c25ea4e71e0b8c12", null ],
     [ "PORTS_LOW", "_pin_group_8h.html#a62753c502876204029768fb834933b6d", null ],
+    [ "checkPinGroup", "_pin_group_8h.html#a12eff577b2216c61d6819a85116002d7", null ],
     [ "setHigh", "_pin_group_8h.html#aa52c08a401cfba437e502a2645902533", null ],
     [ "setInput", "_pin_group_8h.html#adac2aecba669d1fecc4ffbcdfef9d7ee", null ],
     [ "setInputPullupOff", "_pin_group_8h.html#a964f47fdc42f61a9d3ee69dbf1b0f831", null ],

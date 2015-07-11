@@ -4,6 +4,6 @@ var searchData=
   ['mypin0',['myPin0',['../_pin-_analog_8ino.html#aea3e6a6dec36ea8aec67a5a5780d7cee',1,'Pin-Analog.ino']]],
   ['mypin1',['myPin1',['../_pin-_analog_8ino.html#a14829dcc1933e6d1f5a74d0c022a4915',1,'Pin-Analog.ino']]],
   ['mypin2',['myPin2',['../_pin-_analog_8ino.html#a165dc1d7e7e373d1c72bfbe155b97ed7',1,'Pin-Analog.ino']]],
-  ['mypins',['myPins',['../_pin-_array_8ino.html#a67a5de0c0b283000a39430d24e68dc3a',1,'Pin-Array.ino']]],
-  ['mypinsgroup',['myPinsGroup',['../_pin-_group_8ino.html#a11c14eadbd4fb9ff28f643f222665807',1,'Pin-Group.ino']]]
+  ['mypingroup',['myPinGroup',['../_pin-_group_8ino.html#abc12d449a0f3e6c5092af4c91ea7feb8',1,'Pin-Group.ino']]],
+  ['mypins',['myPins',['../_pin-_array_8ino.html#a67a5de0c0b283000a39430d24e68dc3a',1,'Pin-Array.ino']]]
 ];

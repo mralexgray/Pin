@@ -5,7 +5,7 @@ var indexSectionsWithContent =
   2: "lmpu",
   3: "glpst",
   4: "dmop",
-  5: "adpr"
+  5: "admpr"
 };
 
 var indexSectionNames =

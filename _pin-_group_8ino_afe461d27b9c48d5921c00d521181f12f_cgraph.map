@@ -1,4 +1,5 @@
 <map id="loop" name="loop">
 <area shape="rect" id="node2" href="$_pin_group_8h.html#aaed3774ad982f219e0d0f52941f93036" title="Set the pin mode of multiple pins to output and the pin output to LOW. " alt="" coords="100,5,203,31"/>
 <area shape="rect" id="node3" href="$_pin_group_8h.html#adac2aecba669d1fecc4ffbcdfef9d7ee" title="Set the pin mode of multiple pins to input. " alt="" coords="117,55,186,80"/>
+<area shape="rect" id="node4" href="$_pin_group_8h.html#af0f142f65ed4187dc1ab0224c0c8525f" title="Get the value of multiple pins from the PIN register. " alt="" coords="115,104,188,129"/>
 </map>

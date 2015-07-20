@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('_pin-_array_8ino_source.html','');});
 <a href="_pin-_array_8ino.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_pin_8h.html">Pin.h</a>&gt;</span>  <span class="comment">// Include Pin library</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="_pin-_array_8ino.html#a67a5de0c0b283000a39430d24e68dc3a">   10</a></span>&#160;<a class="code" href="class_pin.html">Pin</a> <a class="code" href="_pin-_array_8ino.html#a67a5de0c0b283000a39430d24e68dc3a">myPins</a>[] = {0,1,2,3,4,5,6,7,8,9};  <span class="comment">// Create array of Pin objects for digital pins labelled 0-9 on any of the supported boards</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="_pin-_array_8ino.html#a67a5de0c0b283000a39430d24e68dc3a">   10</a></span>&#160;<a class="code" href="class_pin.html">Pin</a> <a class="code" href="_pin-_array_8ino.html#a67a5de0c0b283000a39430d24e68dc3a">myPins</a>[] = {2,3,4,5,6,7,8,9};  <span class="comment">// Create array of Pin objects for digital pins labelled 2-9 on any of the supported boards</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="_pin-_array_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">   15</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin-_array_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a>() {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
@@ -119,14 +119,14 @@ $(document).ready(function(){initNavTree('_pin-_array_8ino_source.html','');});
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (<span class="keyword">sizeof</span>(<a class="code" href="_pin-_array_8ino.html#a67a5de0c0b283000a39430d24e68dc3a">myPins</a>) / <span class="keyword">sizeof</span>(<a class="code" href="class_pin.html">Pin</a>)); i++) {  <span class="comment">// Iterate over array of Pins</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    myPins[i].<a class="code" href="class_pin.html#a01c18439f6429423aff760d3a3e15539">setOutputLow</a>();  <span class="comment">// Set Pin to output low</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  delay(2);  <span class="comment">// Wait 2 milliseconds</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  delay(200);  <span class="comment">// Wait 200 milliseconds</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (<span class="keyword">sizeof</span>(<a class="code" href="_pin-_array_8ino.html#a67a5de0c0b283000a39430d24e68dc3a">myPins</a>) / <span class="keyword">sizeof</span>(<a class="code" href="class_pin.html">Pin</a>)); i++) {  <span class="comment">// Iterate over array of Pins</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    myPins[i].<a class="code" href="class_pin.html#a3b1c3fa3480cd4a57c065f2e8811543a">setInput</a>();  <span class="comment">// Set Pin to input mode</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  delay(2);  <span class="comment">// Wait 2 milliseconds</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  delay(200);  <span class="comment">// Wait 200 milliseconds</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
 <div class="ttc" id="class_pin_html"><div class="ttname"><a href="class_pin.html">Pin</a></div><div class="ttdoc">Class for fast access to Arduino I/O pins using port manipulation. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_8h_source.html#l00047">Pin.h:47</a></div></div>

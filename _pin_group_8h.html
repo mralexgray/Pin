@@ -145,7 +145,10 @@ Macros</h2></td></tr>
 <tr class="memitem:a62753c502876204029768fb834933b6d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pin_group_8h.html#a62753c502876204029768fb834933b6d">PORTS_LOW</a>&#160;&#160;&#160;(*pins[0].getPORT() &amp;= ~offset)</td></tr>
 <tr class="memdesc:a62753c502876204029768fb834933b6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the PORT register to LOW for an array of pins.  <a href="#a62753c502876204029768fb834933b6d">More...</a><br /></td></tr>
 <tr class="separator:a62753c502876204029768fb834933b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a221c9205544f90fec6625a9bf5773148"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(PINS,  LEN)&#160;&#160;&#160;{ for (int i = 0; i &lt; (LEN); i++) { offset |= (PINS)[i].getOffset();} }</td></tr>
+<tr class="memitem:af32375ed1e63995869c57f202246ea9b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pin_group_8h.html#af32375ed1e63995869c57f202246ea9b">PINS_ON</a>&#160;&#160;&#160;(*pins[0].getPIN() &amp; offset)</td></tr>
+<tr class="memdesc:af32375ed1e63995869c57f202246ea9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the PIN register for an array of pins (HIGH, LOW)  <a href="#af32375ed1e63995869c57f202246ea9b">More...</a><br /></td></tr>
+<tr class="separator:af32375ed1e63995869c57f202246ea9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a221c9205544f90fec6625a9bf5773148"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(PINS,  LEN)</td></tr>
 <tr class="memdesc:a221c9205544f90fec6625a9bf5773148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merge the offsets of multiple pins in an array.  <a href="#a221c9205544f90fec6625a9bf5773148">More...</a><br /></td></tr>
 <tr class="separator:a221c9205544f90fec6625a9bf5773148"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -191,6 +194,10 @@ Functions</h2></td></tr>
 <tr class="memitem:aaed3774ad982f219e0d0f52941f93036"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="_pin_group_8h.html#aaed3774ad982f219e0d0f52941f93036">setOutputLow</a> (<a class="el" href="class_pin.html">Pin</a>(&amp;pins)[N])</td></tr>
 <tr class="memdesc:aaed3774ad982f219e0d0f52941f93036"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the pin mode of multiple pins to output and the pin output to LOW.  <a href="#aaed3774ad982f219e0d0f52941f93036">More...</a><br /></td></tr>
 <tr class="separator:aaed3774ad982f219e0d0f52941f93036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0f142f65ed4187dc1ab0224c0c8525f"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:af0f142f65ed4187dc1ab0224c0c8525f"><td class="memTemplItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="_pin_group_8h.html#af0f142f65ed4187dc1ab0224c0c8525f">getValue</a> (<a class="el" href="class_pin.html">Pin</a>(&amp;pins)[N])</td></tr>
+<tr class="memdesc:af0f142f65ed4187dc1ab0224c0c8525f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of multiple pins from the PIN register.  <a href="#af0f142f65ed4187dc1ab0224c0c8525f">More...</a><br /></td></tr>
+<tr class="separator:af0f142f65ed4187dc1ab0224c0c8525f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12eff577b2216c61d6819a85116002d7"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
 <tr class="memitem:a12eff577b2216c61d6819a85116002d7"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="_pin_group_8h.html#a12eff577b2216c61d6819a85116002d7">checkPinGroup</a> (<a class="el" href="class_pin.html">Pin</a>(&amp;pins)[N])</td></tr>
 <tr class="memdesc:a12eff577b2216c61d6819a85116002d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check the array to ensure all pins use the same registers.  <a href="#a12eff577b2216c61d6819a85116002d7">More...</a><br /></td></tr>
@@ -254,12 +261,34 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;{ for (int i = 0; i &lt; (LEN); i++) { offset |= (PINS)[i].getOffset();} }</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{ \</div>
+<div class="line">    offset = (PINS)[0].getOffset(); \</div>
+<div class="line">    for (<span class="keywordtype">int</span> i = 1; i &lt; (LEN); i++) { \</div>
+<div class="line">        offset |= (PINS)[i].getOffset(); \</div>
+<div class="line">    } \</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>Merge the offsets of multiple pins in an array. </p>
+
+<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00026">26</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af32375ed1e63995869c57f202246ea9b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PINS_ON&#160;&#160;&#160;(*pins[0].getPIN() &amp; offset)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Merge the offsets of multiple pins in an array. </p>
+<p>Get the PIN register for an array of pins (HIGH, LOW) </p>
 
 <p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00024">24</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
 
@@ -323,7 +352,36 @@ template&lt;size_t N&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the pins in the array all use the same registers, false otherwise </dd></dl>
 
-<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00165">165</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
+<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00195">195</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af0f142f65ed4187dc1ab0224c0c8525f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t getValue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_pin.html">Pin</a>(&amp;)&#160;</td>
+          <td class="paramname"><em>pins</em>[N]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the value of multiple pins from the PIN register. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pins</td><td>an array of pins that use the same registers</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>HIGH if all of the pins in the array have a value of HIGH, LOW otherwise </dd></dl>
+
+<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00177">177</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
 
 </div>
 </div>
@@ -351,7 +409,7 @@ template&lt;size_t N&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00113">113</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
+<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00125">125</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
 
 </div>
 </div>
@@ -379,7 +437,7 @@ template&lt;size_t N&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00037">37</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
+<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00049">49</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
 
 </div>
 </div>
@@ -407,7 +465,7 @@ template&lt;size_t N&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00086">86</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
+<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00098">98</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
 
 </div>
 </div>
@@ -435,7 +493,7 @@ template&lt;size_t N&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00073">73</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
+<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00085">85</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
 
 </div>
 </div>
@@ -463,7 +521,7 @@ template&lt;size_t N&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00125">125</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
+<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00137">137</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
 
 </div>
 </div>
@@ -491,7 +549,7 @@ template&lt;size_t N&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00101">101</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
+<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00113">113</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
 
 </div>
 </div>
@@ -519,7 +577,7 @@ template&lt;size_t N&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00137">137</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
+<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00149">149</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
 
 </div>
 </div>
@@ -547,7 +605,7 @@ template&lt;size_t N&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00150">150</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
+<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00162">162</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
 
 </div>
 </div>
@@ -575,7 +633,7 @@ template&lt;size_t N&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00061">61</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
+<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00073">73</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
 
 </div>
 </div>
@@ -603,7 +661,7 @@ template&lt;size_t N&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00049">49</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
+<p>Definition at line <a class="el" href="_pin_group_8h_source.html#l00061">61</a> of file <a class="el" href="_pin_group_8h_source.html">PinGroup.h</a>.</p>
 
 </div>
 </div>

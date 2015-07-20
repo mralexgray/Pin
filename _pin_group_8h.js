@@ -3,6 +3,7 @@ var _pin_group_8h =
     [ "DDRS_HIGH", "_pin_group_8h.html#a4da03d22a9ad5c2cd545b37c833ed48e", null ],
     [ "DDRS_LOW", "_pin_group_8h.html#a56eff9c9247259e4e6885413effb47af", null ],
     [ "MERGE_OFFSET", "_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148", null ],
+    [ "PINS_OFF", "_pin_group_8h.html#a6e3af6cf97bd3e8d39a73e3c8664ade2", null ],
     [ "PINS_ON", "_pin_group_8h.html#af32375ed1e63995869c57f202246ea9b", null ],
     [ "PORTS_HIGH", "_pin_group_8h.html#ab5663727f35f7ba4c25ea4e71e0b8c12", null ],
     [ "PORTS_LOW", "_pin_group_8h.html#a62753c502876204029768fb834933b6d", null ],

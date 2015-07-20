@@ -124,138 +124,142 @@ $(document).ready(function(){initNavTree('_pin_group_8h_source.html','');});
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#a62753c502876204029768fb834933b6d">   22</a></span>&#160;<span class="preprocessor">#define PORTS_LOW (*pins[0].getPORT() &amp;= ~offset)  </span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#af32375ed1e63995869c57f202246ea9b">   24</a></span>&#160;<span class="preprocessor">#define PINS_ON (*pins[0].getPIN() &amp; offset)  </span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">   26</a></span>&#160;<span class="preprocessor">#define MERGE_OFFSET(PINS,LEN) { \</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">    offset = (PINS)[0].getOffset(); \</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">    for (int i = 1; i &lt; (LEN); i++) { \</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">        offset |= (PINS)[i].getOffset(); \</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">    } \</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">}  </span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// ################################# Non-member Methods #################################</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// #################### Input ####################</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin_group_8h.html#adac2aecba669d1fecc4ffbcdfef9d7ee">setInput</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    uint8_t offset;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="_pin_group_8h.html#a56eff9c9247259e4e6885413effb47af">DDRS_LOW</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#adac2aecba669d1fecc4ffbcdfef9d7ee">   49</a></span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin_group_8h.html#a0171487e8427aad411fe2ccd774a4161">setPullupOn</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    uint8_t offset;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="_pin_group_8h.html#ab5663727f35f7ba4c25ea4e71e0b8c12">PORTS_HIGH</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#a0171487e8427aad411fe2ccd774a4161">   61</a></span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin_group_8h.html#afb477315e1c99ca33840541860dfbbc5">setPullupOff</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    uint8_t offset;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="_pin_group_8h.html#a62753c502876204029768fb834933b6d">PORTS_LOW</a>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#afb477315e1c99ca33840541860dfbbc5">   73</a></span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin_group_8h.html#aeaf6ba748a886b8e2bf9d3216ecdeea2">setInputPullupOn</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    uint8_t offset;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="_pin_group_8h.html#a56eff9c9247259e4e6885413effb47af">DDRS_LOW</a>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="_pin_group_8h.html#ab5663727f35f7ba4c25ea4e71e0b8c12">PORTS_HIGH</a>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#aeaf6ba748a886b8e2bf9d3216ecdeea2">   85</a></span>&#160;}</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin_group_8h.html#a964f47fdc42f61a9d3ee69dbf1b0f831">setInputPullupOff</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    uint8_t offset;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="_pin_group_8h.html#a56eff9c9247259e4e6885413effb47af">DDRS_LOW</a>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="_pin_group_8h.html#a62753c502876204029768fb834933b6d">PORTS_LOW</a>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#a964f47fdc42f61a9d3ee69dbf1b0f831">   98</a></span>&#160;}</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">// #################### Output ####################</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; <span class="keywordtype">void</span> <a class="code" href="_pin_group_8h.html#a6b3afcc8f628255b064e8cf8e09857ab">setOutput</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    uint8_t offset;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="_pin_group_8h.html#a4da03d22a9ad5c2cd545b37c833ed48e">DDRS_HIGH</a>;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; }</div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#a6b3afcc8f628255b064e8cf8e09857ab">  113</a></span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin_group_8h.html#aa52c08a401cfba437e502a2645902533">setHigh</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    uint8_t offset;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="_pin_group_8h.html#ab5663727f35f7ba4c25ea4e71e0b8c12">PORTS_HIGH</a>;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
-<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#aa52c08a401cfba437e502a2645902533">  125</a></span>&#160;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin_group_8h.html#a7b4cc6a37d667eea9aabddb61d696018">setLow</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    uint8_t offset;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="_pin_group_8h.html#a62753c502876204029768fb834933b6d">PORTS_LOW</a>;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
-<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#a7b4cc6a37d667eea9aabddb61d696018">  137</a></span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin_group_8h.html#a4d678e790b3eadd46adafc0340fa6b65">setOutputHigh</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    uint8_t offset;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="_pin_group_8h.html#a4da03d22a9ad5c2cd545b37c833ed48e">DDRS_HIGH</a>;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <a class="code" href="_pin_group_8h.html#ab5663727f35f7ba4c25ea4e71e0b8c12">PORTS_HIGH</a>;</div>
-<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#a4d678e790b3eadd46adafc0340fa6b65">  149</a></span>&#160;}</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin_group_8h.html#aaed3774ad982f219e0d0f52941f93036">setOutputLow</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    uint8_t offset;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="_pin_group_8h.html#a4da03d22a9ad5c2cd545b37c833ed48e">DDRS_HIGH</a>;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="_pin_group_8h.html#a62753c502876204029768fb834933b6d">PORTS_LOW</a>;</div>
-<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#aaed3774ad982f219e0d0f52941f93036">  162</a></span>&#160;}</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;uint8_t <a class="code" href="_pin_group_8h.html#af0f142f65ed4187dc1ab0224c0c8525f">getValue</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    uint8_t offset;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="_pin_group_8h.html#af32375ed1e63995869c57f202246ea9b">PINS_ON</a> == offset) {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">return</span> HIGH;</div>
-<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#af0f142f65ed4187dc1ab0224c0c8525f">  177</a></span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">return</span> LOW;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    }</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_pin_group_8h.html#a12eff577b2216c61d6819a85116002d7">checkPinGroup</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keyword">volatile</span> uint8_t* ddr = pins[0].getDDR();</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N; i++) {</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordflow">if</span> (pins[0].getDDR() != pins[i].getDDR()) {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#a12eff577b2216c61d6819a85116002d7">  195</a></span>&#160;        }</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    }</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#a6e3af6cf97bd3e8d39a73e3c8664ade2">   25</a></span>&#160;<span class="preprocessor">#define PINS_OFF (*pins[0].getPIN() | ~offset)  </span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">   27</a></span>&#160;<span class="preprocessor">#define MERGE_OFFSET(PINS,LEN) { \</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">    offset = (PINS)[0].getOffset(); \</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">    for (int i = 1; i &lt; (LEN); i++) { \</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">        offset |= (PINS)[i].getOffset(); \</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">    } \</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">}  </span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// ################################# Non-member Methods #################################</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// #################### Input ####################</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin_group_8h.html#adac2aecba669d1fecc4ffbcdfef9d7ee">setInput</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    uint8_t offset;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="_pin_group_8h.html#a56eff9c9247259e4e6885413effb47af">DDRS_LOW</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#adac2aecba669d1fecc4ffbcdfef9d7ee">   50</a></span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin_group_8h.html#a0171487e8427aad411fe2ccd774a4161">setPullupOn</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    uint8_t offset;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="_pin_group_8h.html#ab5663727f35f7ba4c25ea4e71e0b8c12">PORTS_HIGH</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#a0171487e8427aad411fe2ccd774a4161">   62</a></span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin_group_8h.html#afb477315e1c99ca33840541860dfbbc5">setPullupOff</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    uint8_t offset;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="_pin_group_8h.html#a62753c502876204029768fb834933b6d">PORTS_LOW</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#afb477315e1c99ca33840541860dfbbc5">   74</a></span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin_group_8h.html#aeaf6ba748a886b8e2bf9d3216ecdeea2">setInputPullupOn</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    uint8_t offset;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="_pin_group_8h.html#a56eff9c9247259e4e6885413effb47af">DDRS_LOW</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="_pin_group_8h.html#ab5663727f35f7ba4c25ea4e71e0b8c12">PORTS_HIGH</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#aeaf6ba748a886b8e2bf9d3216ecdeea2">   86</a></span>&#160;}</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin_group_8h.html#a964f47fdc42f61a9d3ee69dbf1b0f831">setInputPullupOff</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    uint8_t offset;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="_pin_group_8h.html#a56eff9c9247259e4e6885413effb47af">DDRS_LOW</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="_pin_group_8h.html#a62753c502876204029768fb834933b6d">PORTS_LOW</a>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#a964f47fdc42f61a9d3ee69dbf1b0f831">   99</a></span>&#160;}</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">// #################### Output ####################</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; <span class="keywordtype">void</span> <a class="code" href="_pin_group_8h.html#a6b3afcc8f628255b064e8cf8e09857ab">setOutput</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    uint8_t offset;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="_pin_group_8h.html#a4da03d22a9ad5c2cd545b37c833ed48e">DDRS_HIGH</a>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; }</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#a6b3afcc8f628255b064e8cf8e09857ab">  114</a></span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin_group_8h.html#aa52c08a401cfba437e502a2645902533">setHigh</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    uint8_t offset;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="_pin_group_8h.html#ab5663727f35f7ba4c25ea4e71e0b8c12">PORTS_HIGH</a>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#aa52c08a401cfba437e502a2645902533">  126</a></span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin_group_8h.html#a7b4cc6a37d667eea9aabddb61d696018">setLow</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    uint8_t offset;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="_pin_group_8h.html#a62753c502876204029768fb834933b6d">PORTS_LOW</a>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#a7b4cc6a37d667eea9aabddb61d696018">  138</a></span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin_group_8h.html#a4d678e790b3eadd46adafc0340fa6b65">setOutputHigh</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    uint8_t offset;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <a class="code" href="_pin_group_8h.html#a4da03d22a9ad5c2cd545b37c833ed48e">DDRS_HIGH</a>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="_pin_group_8h.html#ab5663727f35f7ba4c25ea4e71e0b8c12">PORTS_HIGH</a>;</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#a4d678e790b3eadd46adafc0340fa6b65">  150</a></span>&#160;}</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pin_group_8h.html#aaed3774ad982f219e0d0f52941f93036">setOutputLow</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    uint8_t offset;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="_pin_group_8h.html#a4da03d22a9ad5c2cd545b37c833ed48e">DDRS_HIGH</a>;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="_pin_group_8h.html#a62753c502876204029768fb834933b6d">PORTS_LOW</a>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#aaed3774ad982f219e0d0f52941f93036">  163</a></span>&#160;}</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;uint8_t <a class="code" href="_pin_group_8h.html#af0f142f65ed4187dc1ab0224c0c8525f">getValue</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    uint8_t offset;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a>(pins,N);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="_pin_group_8h.html#af32375ed1e63995869c57f202246ea9b">PINS_ON</a> == offset) {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">return</span> HIGH;</div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#af0f142f65ed4187dc1ab0224c0c8525f">  178</a></span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="_pin_group_8h.html#a6e3af6cf97bd3e8d39a73e3c8664ade2">PINS_OFF</a> == ~offset) {</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">return</span> LOW;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;}</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_pin_group_8h.html#a12eff577b2216c61d6819a85116002d7">checkPinGroup</a>(<a class="code" href="class_pin.html">Pin</a> (&amp;pins)[N]) {</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keyword">volatile</span> uint8_t* ddr = pins[0].getDDR();</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N; i++) {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">if</span> (pins[0].getDDR() != pins[i].getDDR()) {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="_pin_group_8h.html#a12eff577b2216c61d6819a85116002d7">  198</a></span>&#160;        }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="_pin_group_8h_html_a7b4cc6a37d667eea9aabddb61d696018"><div class="ttname"><a href="_pin_group_8h.html#a7b4cc6a37d667eea9aabddb61d696018">setLow</a></div><div class="ttdeci">void setLow(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin output of multiple pins to LOW. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00137">PinGroup.h:137</a></div></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="_pin_group_8h_html_a7b4cc6a37d667eea9aabddb61d696018"><div class="ttname"><a href="_pin_group_8h.html#a7b4cc6a37d667eea9aabddb61d696018">setLow</a></div><div class="ttdeci">void setLow(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin output of multiple pins to LOW. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00138">PinGroup.h:138</a></div></div>
 <div class="ttc" id="_pin_group_8h_html_ab5663727f35f7ba4c25ea4e71e0b8c12"><div class="ttname"><a href="_pin_group_8h.html#ab5663727f35f7ba4c25ea4e71e0b8c12">PORTS_HIGH</a></div><div class="ttdeci">#define PORTS_HIGH</div><div class="ttdoc">Set the PORT register to HIGH for an array of pins. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00021">PinGroup.h:21</a></div></div>
-<div class="ttc" id="_pin_group_8h_html_a6b3afcc8f628255b064e8cf8e09857ab"><div class="ttname"><a href="_pin_group_8h.html#a6b3afcc8f628255b064e8cf8e09857ab">setOutput</a></div><div class="ttdeci">void setOutput(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin mode of multiple pins to output. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00113">PinGroup.h:113</a></div></div>
+<div class="ttc" id="_pin_group_8h_html_a6b3afcc8f628255b064e8cf8e09857ab"><div class="ttname"><a href="_pin_group_8h.html#a6b3afcc8f628255b064e8cf8e09857ab">setOutput</a></div><div class="ttdeci">void setOutput(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin mode of multiple pins to output. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00114">PinGroup.h:114</a></div></div>
 <div class="ttc" id="_pin_group_8h_html_a4da03d22a9ad5c2cd545b37c833ed48e"><div class="ttname"><a href="_pin_group_8h.html#a4da03d22a9ad5c2cd545b37c833ed48e">DDRS_HIGH</a></div><div class="ttdeci">#define DDRS_HIGH</div><div class="ttdoc">Set the DDR register to HIGH for an array of pins. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00018">PinGroup.h:18</a></div></div>
 <div class="ttc" id="class_pin_html"><div class="ttname"><a href="class_pin.html">Pin</a></div><div class="ttdoc">Class for fast access to Arduino I/O pins using port manipulation. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_8h_source.html#l00047">Pin.h:47</a></div></div>
-<div class="ttc" id="_pin_group_8h_html_a0171487e8427aad411fe2ccd774a4161"><div class="ttname"><a href="_pin_group_8h.html#a0171487e8427aad411fe2ccd774a4161">setPullupOn</a></div><div class="ttdeci">void setPullupOn(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin pullup resistor of multiple pins to on. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00061">PinGroup.h:61</a></div></div>
-<div class="ttc" id="_pin_group_8h_html_aa52c08a401cfba437e502a2645902533"><div class="ttname"><a href="_pin_group_8h.html#aa52c08a401cfba437e502a2645902533">setHigh</a></div><div class="ttdeci">void setHigh(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin output of multiple pins to HIGH. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00125">PinGroup.h:125</a></div></div>
+<div class="ttc" id="_pin_group_8h_html_a0171487e8427aad411fe2ccd774a4161"><div class="ttname"><a href="_pin_group_8h.html#a0171487e8427aad411fe2ccd774a4161">setPullupOn</a></div><div class="ttdeci">void setPullupOn(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin pullup resistor of multiple pins to on. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00062">PinGroup.h:62</a></div></div>
+<div class="ttc" id="_pin_group_8h_html_aa52c08a401cfba437e502a2645902533"><div class="ttname"><a href="_pin_group_8h.html#aa52c08a401cfba437e502a2645902533">setHigh</a></div><div class="ttdeci">void setHigh(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin output of multiple pins to HIGH. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00126">PinGroup.h:126</a></div></div>
 <div class="ttc" id="_pin_group_8h_html_a62753c502876204029768fb834933b6d"><div class="ttname"><a href="_pin_group_8h.html#a62753c502876204029768fb834933b6d">PORTS_LOW</a></div><div class="ttdeci">#define PORTS_LOW</div><div class="ttdoc">Set the PORT register to LOW for an array of pins. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00022">PinGroup.h:22</a></div></div>
-<div class="ttc" id="_pin_group_8h_html_af32375ed1e63995869c57f202246ea9b"><div class="ttname"><a href="_pin_group_8h.html#af32375ed1e63995869c57f202246ea9b">PINS_ON</a></div><div class="ttdeci">#define PINS_ON</div><div class="ttdoc">Get the PIN register for an array of pins (HIGH, LOW) </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00024">PinGroup.h:24</a></div></div>
-<div class="ttc" id="_pin_group_8h_html_a4d678e790b3eadd46adafc0340fa6b65"><div class="ttname"><a href="_pin_group_8h.html#a4d678e790b3eadd46adafc0340fa6b65">setOutputHigh</a></div><div class="ttdeci">void setOutputHigh(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin mode of multiple pins to output and the pin output to HIGH. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00149">PinGroup.h:149</a></div></div>
-<div class="ttc" id="_pin_group_8h_html_adac2aecba669d1fecc4ffbcdfef9d7ee"><div class="ttname"><a href="_pin_group_8h.html#adac2aecba669d1fecc4ffbcdfef9d7ee">setInput</a></div><div class="ttdeci">void setInput(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin mode of multiple pins to input. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00049">PinGroup.h:49</a></div></div>
-<div class="ttc" id="_pin_group_8h_html_a12eff577b2216c61d6819a85116002d7"><div class="ttname"><a href="_pin_group_8h.html#a12eff577b2216c61d6819a85116002d7">checkPinGroup</a></div><div class="ttdeci">bool checkPinGroup(Pin(&amp;pins)[N])</div><div class="ttdoc">Check the array to ensure all pins use the same registers. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00195">PinGroup.h:195</a></div></div>
-<div class="ttc" id="_pin_group_8h_html_aaed3774ad982f219e0d0f52941f93036"><div class="ttname"><a href="_pin_group_8h.html#aaed3774ad982f219e0d0f52941f93036">setOutputLow</a></div><div class="ttdeci">void setOutputLow(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin mode of multiple pins to output and the pin output to LOW. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00162">PinGroup.h:162</a></div></div>
+<div class="ttc" id="_pin_group_8h_html_af32375ed1e63995869c57f202246ea9b"><div class="ttname"><a href="_pin_group_8h.html#af32375ed1e63995869c57f202246ea9b">PINS_ON</a></div><div class="ttdeci">#define PINS_ON</div><div class="ttdoc">Get the PIN register for an array of pins. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00024">PinGroup.h:24</a></div></div>
+<div class="ttc" id="_pin_group_8h_html_a4d678e790b3eadd46adafc0340fa6b65"><div class="ttname"><a href="_pin_group_8h.html#a4d678e790b3eadd46adafc0340fa6b65">setOutputHigh</a></div><div class="ttdeci">void setOutputHigh(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin mode of multiple pins to output and the pin output to HIGH. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00150">PinGroup.h:150</a></div></div>
+<div class="ttc" id="_pin_group_8h_html_adac2aecba669d1fecc4ffbcdfef9d7ee"><div class="ttname"><a href="_pin_group_8h.html#adac2aecba669d1fecc4ffbcdfef9d7ee">setInput</a></div><div class="ttdeci">void setInput(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin mode of multiple pins to input. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00050">PinGroup.h:50</a></div></div>
+<div class="ttc" id="_pin_group_8h_html_a12eff577b2216c61d6819a85116002d7"><div class="ttname"><a href="_pin_group_8h.html#a12eff577b2216c61d6819a85116002d7">checkPinGroup</a></div><div class="ttdeci">bool checkPinGroup(Pin(&amp;pins)[N])</div><div class="ttdoc">Check the array to ensure all pins use the same registers. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00198">PinGroup.h:198</a></div></div>
+<div class="ttc" id="_pin_group_8h_html_aaed3774ad982f219e0d0f52941f93036"><div class="ttname"><a href="_pin_group_8h.html#aaed3774ad982f219e0d0f52941f93036">setOutputLow</a></div><div class="ttdeci">void setOutputLow(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin mode of multiple pins to output and the pin output to LOW. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00163">PinGroup.h:163</a></div></div>
 <div class="ttc" id="_pin_8h_html"><div class="ttname"><a href="_pin_8h.html">Pin.h</a></div><div class="ttdoc">Arduino Pin library. </div></div>
-<div class="ttc" id="_pin_group_8h_html_af0f142f65ed4187dc1ab0224c0c8525f"><div class="ttname"><a href="_pin_group_8h.html#af0f142f65ed4187dc1ab0224c0c8525f">getValue</a></div><div class="ttdeci">uint8_t getValue(Pin(&amp;pins)[N])</div><div class="ttdoc">Get the value of multiple pins from the PIN register. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00177">PinGroup.h:177</a></div></div>
-<div class="ttc" id="_pin_group_8h_html_a964f47fdc42f61a9d3ee69dbf1b0f831"><div class="ttname"><a href="_pin_group_8h.html#a964f47fdc42f61a9d3ee69dbf1b0f831">setInputPullupOff</a></div><div class="ttdeci">void setInputPullupOff(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin mode of multiple pins to input and the pin pullup resistor to off. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00098">PinGroup.h:98</a></div></div>
-<div class="ttc" id="_pin_group_8h_html_aeaf6ba748a886b8e2bf9d3216ecdeea2"><div class="ttname"><a href="_pin_group_8h.html#aeaf6ba748a886b8e2bf9d3216ecdeea2">setInputPullupOn</a></div><div class="ttdeci">void setInputPullupOn(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin mode of multiple pins to input and the pin pullup resistor to on. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00085">PinGroup.h:85</a></div></div>
-<div class="ttc" id="_pin_group_8h_html_a221c9205544f90fec6625a9bf5773148"><div class="ttname"><a href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a></div><div class="ttdeci">#define MERGE_OFFSET(PINS, LEN)</div><div class="ttdoc">Merge the offsets of multiple pins in an array. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00026">PinGroup.h:26</a></div></div>
-<div class="ttc" id="_pin_group_8h_html_afb477315e1c99ca33840541860dfbbc5"><div class="ttname"><a href="_pin_group_8h.html#afb477315e1c99ca33840541860dfbbc5">setPullupOff</a></div><div class="ttdeci">void setPullupOff(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin pullup resistor of multiple pins to off. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00073">PinGroup.h:73</a></div></div>
+<div class="ttc" id="_pin_group_8h_html_af0f142f65ed4187dc1ab0224c0c8525f"><div class="ttname"><a href="_pin_group_8h.html#af0f142f65ed4187dc1ab0224c0c8525f">getValue</a></div><div class="ttdeci">uint8_t getValue(Pin(&amp;pins)[N])</div><div class="ttdoc">Get the value of multiple pins from the PIN register. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00178">PinGroup.h:178</a></div></div>
+<div class="ttc" id="_pin_group_8h_html_a964f47fdc42f61a9d3ee69dbf1b0f831"><div class="ttname"><a href="_pin_group_8h.html#a964f47fdc42f61a9d3ee69dbf1b0f831">setInputPullupOff</a></div><div class="ttdeci">void setInputPullupOff(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin mode of multiple pins to input and the pin pullup resistor to off. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00099">PinGroup.h:99</a></div></div>
+<div class="ttc" id="_pin_group_8h_html_aeaf6ba748a886b8e2bf9d3216ecdeea2"><div class="ttname"><a href="_pin_group_8h.html#aeaf6ba748a886b8e2bf9d3216ecdeea2">setInputPullupOn</a></div><div class="ttdeci">void setInputPullupOn(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin mode of multiple pins to input and the pin pullup resistor to on. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00086">PinGroup.h:86</a></div></div>
+<div class="ttc" id="_pin_group_8h_html_a221c9205544f90fec6625a9bf5773148"><div class="ttname"><a href="_pin_group_8h.html#a221c9205544f90fec6625a9bf5773148">MERGE_OFFSET</a></div><div class="ttdeci">#define MERGE_OFFSET(PINS, LEN)</div><div class="ttdoc">Merge the offsets of multiple pins in an array. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00027">PinGroup.h:27</a></div></div>
+<div class="ttc" id="_pin_group_8h_html_a6e3af6cf97bd3e8d39a73e3c8664ade2"><div class="ttname"><a href="_pin_group_8h.html#a6e3af6cf97bd3e8d39a73e3c8664ade2">PINS_OFF</a></div><div class="ttdeci">#define PINS_OFF</div><div class="ttdoc">Get the inverse PIN register for an array of pins. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00025">PinGroup.h:25</a></div></div>
+<div class="ttc" id="_pin_group_8h_html_afb477315e1c99ca33840541860dfbbc5"><div class="ttname"><a href="_pin_group_8h.html#afb477315e1c99ca33840541860dfbbc5">setPullupOff</a></div><div class="ttdeci">void setPullupOff(Pin(&amp;pins)[N])</div><div class="ttdoc">Set the pin pullup resistor of multiple pins to off. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00074">PinGroup.h:74</a></div></div>
 <div class="ttc" id="_pin_group_8h_html_a56eff9c9247259e4e6885413effb47af"><div class="ttname"><a href="_pin_group_8h.html#a56eff9c9247259e4e6885413effb47af">DDRS_LOW</a></div><div class="ttdeci">#define DDRS_LOW</div><div class="ttdoc">Set the DDR register to LOW for an array of pins. </div><div class="ttdef"><b>Definition:</b> <a href="_pin_group_8h_source.html#l00019">PinGroup.h:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

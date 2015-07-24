@@ -7,5 +7,6 @@ var searchData=
   ['mypin1',['myPin1',['../_pin-_analog_8ino.html#a14829dcc1933e6d1f5a74d0c022a4915',1,'Pin-Analog.ino']]],
   ['mypin2',['myPin2',['../_pin-_analog_8ino.html#a165dc1d7e7e373d1c72bfbe155b97ed7',1,'Pin-Analog.ino']]],
   ['mypingroup',['myPinGroup',['../_pin-_group_8ino.html#abc12d449a0f3e6c5092af4c91ea7feb8',1,'Pin-Group.ino']]],
-  ['mypins',['myPins',['../_pin-_array_8ino.html#a67a5de0c0b283000a39430d24e68dc3a',1,'Pin-Array.ino']]]
+  ['mypins',['myPins',['../_pin-_array_8ino.html#a67a5de0c0b283000a39430d24e68dc3a',1,'Pin-Array.ino']]],
+  ['mypinssize',['myPinsSize',['../_pin-_array_8ino.html#aa177976675f1cb7cc5c9cf517f921132',1,'Pin-Array.ino']]]
 ];

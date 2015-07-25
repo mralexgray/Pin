@@ -101,7 +101,40 @@ $(document).ready(function(){initNavTree('index.html','');});
 <div class="title">Arduino Pin Library Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><p>An easy to use Arduino library for fast digital I/O using port manipulation. Capable of simultaneous operations on multiple Pins. Supports Arduino Mega, Arduino Uno, and Arduino Leonardo. Complete documentation can be found <a href="https://pin.fenichelar.com">here</a>. Source code can be found <a href="https://github.com/fenichelar/Pin">here</a>. Common uses are listed below.</p>
+<h2>Install</h2>
+<p>Install from the Arduino Library Manager or download the latest release <a href="https://github.com/fenichelar/Pin/releases/latest">here</a>.</p>
+<h2>Import <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> Library </h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_pin_8h.html">Pin.h</a>&gt;</span></div>
+</div><!-- fragment --><h2>Create <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> Object</h2>
+<p>Single <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> </p><div class="fragment"><div class="line"><a class="code" href="class_pin.html">Pin</a> <a class="code" href="_pin-_toggle_8ino.html#ab5d72310f6270cd6a6e45f88fa790be8">myPin</a> = <a class="code" href="class_pin.html">Pin</a>(5);</div>
+</div><!-- fragment --><p> Array of Pins </p><div class="fragment"><div class="line"><a class="code" href="class_pin.html">Pin</a> <a class="code" href="_pin-_array_8ino.html#a67a5de0c0b283000a39430d24e68dc3a">myPins</a>[] = {6,7};</div>
+</div><!-- fragment --><h2>Use as Input</h2>
+<p>Set mode to input </p><div class="fragment"><div class="line">myPin.<a class="code" href="class_pin.html#a3b1c3fa3480cd4a57c065f2e8811543a">setInput</a>();</div>
+</div><!-- fragment --><p> Enable/disable pullup resistor </p><div class="fragment"><div class="line">myPin.<a class="code" href="class_pin.html#a89ae41cb3e11695dd5f890cf78c139b3">setPullupOn</a>();</div>
+</div><!-- fragment --> <div class="fragment"><div class="line">myPin.<a class="code" href="class_pin.html#ab0170aaba5a46285ad969d3002460624">setPullupOff</a>();</div>
+</div><!-- fragment --><h2>Use as Output</h2>
+<p>Set mode to output </p><div class="fragment"><div class="line">myPin.<a class="code" href="class_pin.html#a2309200ff683097b1aa8679ae3dc1e30">setOutput</a>();</div>
+</div><!-- fragment --><p> Set HIGH/LOW </p><div class="fragment"><div class="line">myPin.<a class="code" href="class_pin.html#a1ef53ec982d5400c5d0e2a6550d9709e">setHigh</a>();</div>
+</div><!-- fragment --> <div class="fragment"><div class="line">myPin.<a class="code" href="class_pin.html#ab065c0e5ce6c7079c07a2f81169939ed">setLow</a>();</div>
+</div><!-- fragment --><h2>Get <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> Info</h2>
+<p>Get mode (INPUT/OUTPUT) </p><div class="fragment"><div class="line">myPin.<a class="code" href="class_pin.html#a2e59b530eab7ceb7fa949909ee1035d6">getMode</a>();</div>
+</div><!-- fragment --><p> Get state (HIGH/LOW) </p><div class="fragment"><div class="line">myPin.<a class="code" href="class_pin.html#ad835a98109702832d2ac520ea4aa5006">getState</a>();</div>
+</div><!-- fragment --><p> Get value (HIGH/LOW) </p><div class="fragment"><div class="line">myPin.<a class="code" href="class_pin.html#acd4d7c536511bf581f2ac54c51b2d41e">getValue</a>();</div>
+</div><!-- fragment --><h2>Toggle</h2>
+<p>Toggle mode (OUTPUT -&gt; INPUT, INPUT -&gt; OUTPUT) </p><div class="fragment"><div class="line">myPin.<a class="code" href="class_pin.html#a5b817eeb634f6820c4158914d0a5bbd6">toggleMode</a>();</div>
+</div><!-- fragment --><p> Toggle state (HIGH -&gt; LOW, LOW -&gt; HIGH) </p><div class="fragment"><div class="line">myPin.<a class="code" href="class_pin.html#a52692c05523fda29515f964d52601c80">toggleState</a>();</div>
+</div><!-- fragment --><h2>Simultaneous Operations on Multiple Pins</h2>
+<p>All Pins in array must use the same DDR, PORT, and PIN registers. Look at the corresponding file in the boards directory to determine what registers each pin uses on a given board. Because this library is built for speed, the array of pins is not automatically checked to be valid for simultaneous operations. An invalid array will produce unexpected results without error, therefore it is highly recommended that the array be validated using the <code>checkPinGroup</code> function during setup.</p>
+<p>Import <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> library with support for simultaneous operations </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_pin_8h.html">Pin.h</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_pin_group_8h.html">PinGroup.h</a>&gt;</span></div>
+</div><!-- fragment --><p> Create array of Pins for simultaneous operations </p><div class="fragment"><div class="line"><a class="code" href="class_pin.html">Pin</a> <a class="code" href="_pin-_group_8ino.html#abc12d449a0f3e6c5092af4c91ea7feb8">myPinGroup</a>[] = {2,3,5};</div>
+</div><!-- fragment --><p> Check to ensure all pins in array of pins use the same registers </p><div class="fragment"><div class="line"><a class="code" href="_pin_group_8h.html#a12eff577b2216c61d6819a85116002d7">checkPinGroup</a>(myPinGroup) == <span class="keyword">true</span></div>
+</div><!-- fragment --><p> Simultaneously set mode for array of Pins to input </p><div class="fragment"><div class="line"><a class="code" href="_pin_group_8h.html#adac2aecba669d1fecc4ffbcdfef9d7ee">setInput</a>(myPinGroup);</div>
+</div><!-- fragment --><p> Simultaneously set mode for array of Pins to output </p><div class="fragment"><div class="line"><a class="code" href="_pin_group_8h.html#a6b3afcc8f628255b064e8cf8e09857ab">setOutput</a>(myPinGroup);</div>
+</div><!-- fragment --><p> Simultaneously check if array of Pins are all HIGH </p><div class="fragment"><div class="line"><a class="code" href="_pin_group_8h.html#af0f142f65ed4187dc1ab0224c0c8525f">getValue</a>(myPinGroup) == HIGH</div>
+</div><!-- fragment --><p> Simultaneously check if array of Pins are all LOW </p><div class="fragment"><div class="line"><a class="code" href="_pin_group_8h.html#af0f142f65ed4187dc1ab0224c0c8525f">getValue</a>(myPinGroup) == LOW</div>
+</div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
@@ -111,6 +144,9 @@ $(document).ready(function(){initNavTree('index.html','');});
     </li>
     <li class="footer">
       Source Code: <a href="https://github.com/fenichelar/Pin">https://github.com/fenichelar/Pin</a>
+    </li>
+    <li class="footer">
+      Latest Release: <a href="https://github.com/fenichelar/Pin/releases/latest">https://github.com/fenichelar/Pin/releases/latest</a>
     </li>
   </ul>
 </div>

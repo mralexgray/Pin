@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>Arduino Pin Library: Globals</title>
+<title>Arduino Pin Library: Arduino Pin Library</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -47,8 +47,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
-      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -67,20 +68,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li class="current"><a href="globals.html"><span>Globals</span></a></li>
-    </ul>
-  </div>
-  <div id="navrow3" class="tabs2">
-    <ul class="tablist">
-      <li><a href="globals.html"><span>All</span></a></li>
-      <li><a href="globals_func.html"><span>Functions</span></a></li>
-      <li class="current"><a href="globals_vars.html"><span>Variables</span></a></li>
-      <li><a href="globals_defs.html"><span>Macros</span></a></li>
-    </ul>
-  </div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -93,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('globals_vars.html','');});
+$(document).ready(function(){initNavTree('md__r_e_a_d_m_e.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -110,36 +97,30 @@ $(document).ready(function(){initNavTree('globals_vars.html','');});
 </iframe>
 </div>
 
+<div class="header">
+  <div class="headertitle">
+<div class="title">Arduino <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> Library </div>  </div>
+</div><!--header-->
 <div class="contents">
-&#160;<ul>
-<li>myPin
-: <a class="el" href="_pin-_toggle_8ino.html#ab5d72310f6270cd6a6e45f88fa790be8">Pin-Toggle.ino</a>
-</li>
-<li>myPin0
-: <a class="el" href="_pin-_analog_8ino.html#aea3e6a6dec36ea8aec67a5a5780d7cee">Pin-Analog.ino</a>
-</li>
-<li>myPin1
-: <a class="el" href="_pin-_analog_8ino.html#a14829dcc1933e6d1f5a74d0c022a4915">Pin-Analog.ino</a>
-</li>
-<li>myPin2
-: <a class="el" href="_pin-_analog_8ino.html#a165dc1d7e7e373d1c72bfbe155b97ed7">Pin-Analog.ino</a>
-</li>
-<li>myPinGroup
-: <a class="el" href="_pin-_group_8ino.html#abc12d449a0f3e6c5092af4c91ea7feb8">Pin-Group.ino</a>
-</li>
-<li>myPins
-: <a class="el" href="_pin-_array_8ino.html#a67a5de0c0b283000a39430d24e68dc3a">Pin-Array.ino</a>
-</li>
-<li>myPinsSize
-: <a class="el" href="_pin-_array_8ino.html#aa177976675f1cb7cc5c9cf517f921132">Pin-Array.ino</a>
-</li>
-<li>pinMappings
-: <a class="el" href="leonardo_8h.html#ab25ff47bf5b7402532a25b0a74e5a113">leonardo.h</a>
-, <a class="el" href="mega_8h.html#ab25ff47bf5b7402532a25b0a74e5a113">mega.h</a>
-, <a class="el" href="uno_8h.html#ab25ff47bf5b7402532a25b0a74e5a113">uno.h</a>
-</li>
-</ul>
-</div><!-- contents -->
+<div class="textblock"><p>An easy to use Arduino library for fast digital I/O using port manipulation. Capable of simultaneous operations on multiple Pins. Supports Arduino Mega, Arduino Uno, and Arduino Leonardo. Complete documentation can be found <a href="https://pin.fenichelar.com">here</a>. Common uses are listed below.</p>
+<h2>Install</h2>
+<p>Install from the Arduino Library Manager or download the latest release <a href="https://github.com/fenichelar/Pin/releases/latest">here</a>.</p>
+<h2>Import <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> Library</h2>
+<p>```C #include &lt;<a class="el" href="_pin_8h.html" title="Arduino Pin library. ">Pin.h</a>&gt; ```</p>
+<h2>Create <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> Object</h2>
+<p>Single <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> ```C <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> myPin = <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin(5)</a>; ``` Array of Pins ```C <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> myPins[] = {6,7}; ```</p>
+<h2>Use as Input</h2>
+<p>Set mode to input ```C myPin.setInput(); ``` Enable/disable pullup resistor ```C myPin.setPullupOn(); <code> </code>C myPin.setPullupOff(); ```</p>
+<h2>Use as Output</h2>
+<p>Set mode to output ```C myPin.setOutput(); ``` Set HIGH/LOW ```C myPin.setHigh(); <code> </code>C myPin.setLow(); ```</p>
+<h2>Get <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> Info</h2>
+<p>Get mode (INPUT/OUTPUT) ```C myPin.getMode(); ``` Get state (HIGH/LOW) ```C myPin.getState(); ``` Get value (HIGH/LOW) ```C myPin.getValue(); ```</p>
+<h2>Toggle</h2>
+<p>Toggle mode (OUTPUT -&gt; INPUT, INPUT -&gt; OUTPUT) ```C myPin.toggleMode(); ``` Toggle state (HIGH -&gt; LOW, LOW -&gt; HIGH) ```C myPin.toggleState(); ```</p>
+<h2>Simultaneous Operations on Multiple Pins</h2>
+<p>All Pins in array must use the same DDR, PORT, and PIN registers. Look at the corresponding file in the boards directory to determine what registers each pin uses on a given board.</p>
+<p>Import <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> library with support for simultaneous operations ```C #include &lt;<a class="el" href="_pin_8h.html" title="Arduino Pin library. ">Pin.h</a>&gt; #include &lt;<a class="el" href="_pin_group_8h.html" title="Arduino Pin library group functions. ">PinGroup.h</a>&gt; ``` Create array of Pins for simultaneous operations ```C <a class="el" href="class_pin.html" title="Class for fast access to Arduino I/O pins using port manipulation. ">Pin</a> myPinGroup[] = {2,3,5}; ``` Check to ensure all pins in array of pins use the same registers ```C checkPinGroup(myPinGroup) == true ``` Simultaneously set mode for array of Pins to input ```C setInput(myPinGroup); ``` Simultaneously set mode for array of Pins to output ```C setOutput(myPinGroup); ``` Simultaneously check if array of Pins are all HIGH ```C getValue(myPinGroup) == HIGH ``` Simultaneously check if array of Pins are all LOW ```C getValue(myPinGroup) == LOW ``` </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

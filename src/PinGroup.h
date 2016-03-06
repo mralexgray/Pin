@@ -24,12 +24,10 @@
 #define PINS_ON (*pins[0].getPIN() & offset)  ///< Get the PIN register for an array of pins
 #define PINS_OFF (*pins[0].getPIN() | ~offset)  ///< Get the inverse PIN register for an array of pins
 
-#define MERGE_OFFSET(PINS,LEN) { \
-	offset = (PINS)[0].getOffset(); \
-	for (int i = 1; i < (LEN); i++) { \
-		offset |= (PINS)[i].getOffset(); \
-	} \
-}  ///< Merge the offsets of multiple pins in an array
+///< Merge the offsets of multiple pins in an array
+#define MERGE_OFFSET(PINS,LEN) \
+{  offset = (PINS)[0].getOffset(); for (int i = 1; i < (LEN); i++) { offset |= (PINS)[i].getOffset(); } }
+
 
 
 // ################################# Setters #################################

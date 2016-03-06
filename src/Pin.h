@@ -33,6 +33,8 @@
 class Pin {
 	public:
 		// #################### Constructors ####################
+		Pin() {}
+		~Pin() {}
 		Pin(uint8_t number);
 		Pin(uint8_t number, bool analog);
 
@@ -54,6 +56,7 @@ class Pin {
 		bool setMode(uint8_t mode);
 		bool setState(uint8_t state);
     void setDuty(float);
+    void setPin(uint8_t);
 
 		// Input
 		void setInput();

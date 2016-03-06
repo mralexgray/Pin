@@ -11,6 +11,9 @@
 
 // ################################# Constructors #################################
 
+void Pin::setPin(uint8_t number) {
+	init(number);
+}
 /**
 	Basic constructor
 

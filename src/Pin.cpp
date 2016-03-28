@@ -222,6 +222,15 @@ void Pin::setOutputLow() {
 	PORT_LOW;
 }
 
+/**
+	Set the PWM duty cycle
+
+  @param value the duty cycle (0-255)
+ */
+void Pin::setDutyCycle(int value) {
+	analogWrite(_number,value);
+}
+
 // #################### Toggle ####################
 
 /**

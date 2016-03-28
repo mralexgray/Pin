@@ -8,6 +8,8 @@
 #include <PinGroup.h>  // Include Pin library group functions
 
 // The Pins used in this array must all be on the same DDR and PORT registers
+// Look at the Arduino documentation for your board to determine what registers each pin uses
+Pin myPinGroup[] = {2,3,5};  // Create array of Pin objects for digital pins labelled 2,3,5 on the Arduino Uno or Mega (not valid for Leonardo)
 // Look at the coresponding file in the boards directory to determine what register each pin is on
 Pin myPinGroup[] = {2,3,4,5};  // Create array of Pin objects for digital pins labelled 2,3,5 on the Arduino Uno or Mega (not valid for Leonardo)
 
@@ -28,6 +30,13 @@ void setup() {
   Called continously after setup
  */
 void loop() {
+  setOutputLow(myPinGroup);  // Simultaneously set array of Pins to output low
+
+  delay(200);  // Wait 200 milliseconds
+
+  setOutputHigh(myPinGroup);  // Simultaneously set array of Pins to output high
+
+  delay(200);  // Wait 200 milliseconds
 
   setOutputLow(myPinGroup);   // Simultaneously set Pin group to output low
   delay(300);
@@ -35,9 +44,14 @@ void loop() {
   toggleState(myPinGroup);    // Simultaneously toggle Pin Group.
   delay(500);
 
+  // Simultaneously read an array of Pins value
   setInput(myPinGroup);       // Simultaneously set Pin Group to input mode
+    Serial.println("All Pins in array are HIGH.");
   setLow(myPinGroup);         // Simultaneously set Pin Group LOW
+    Serial.println("All Pins in array are LOW.");
+  } else {
   delay(200);
+  }
 
   // Simultaneously read Pin Group value
   getValue(myPinGroup) == HIGH  ? Serial.println("All Pins in array are HIGH.") :
